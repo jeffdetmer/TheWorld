@@ -2,33 +2,37 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>The World</title>
+    <title>The World - @ViewBag.Title</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
-    <link href="css/index.css" rel="stylesheet" />
+    <link href="~/css/index.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
-        <h1>The World</h1>
-        <p>This will be a fun website soon!</p>
-        <form>
-            <div>
-                <label>Date</label>
-                <input />
-            </div>
-            <div>
-                <label>Location</label>
-                <input />
-            </div>
-            <div>
-                <input type="submit" value="Add" />
-            </div>
-        </form>
+    <div id="sidebar">
+        <img src="~/img/user1.jpg" alt="headshot" class="headshot" />
+        <span id="username">Sam Hastings</span>
+        <ul class="menu">
+            <li class="active"><a asp-controller="App" asp-action="Index">Home</a></li>
+            <li><a asp-controller="App" asp-action="About">About</a></li>
+            <li><a asp-controller="App" asp-action="Contact">Contact</a></li>
+        </ul>
     </div>
-    <div>
-        &copy;2016 The World Ltd.
+    <div id="wrapper">
+        <div id="main">
+            <div>
+                <button id="sidebarToggle">Toggle Menu</button>
+            </div>
+            <div>
+                @RenderBody()
+            </div>
+        </div>
+        <div id="footer">
+            &copy;2016 The World Ltd.
+        </div>
     </div>
-    <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+    <script src="lib/jquery/dist/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
+    <script src="~/js/site.js"></script>
 </body>
 </html>
